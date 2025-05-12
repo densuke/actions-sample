@@ -17,5 +17,5 @@ jobs:
         uses: astral-sh/setup-uv@v5
       - name: テストの実施
         run: |
-          uv run fizzbuzz.py || exit 1
+          uv run pytest
     
