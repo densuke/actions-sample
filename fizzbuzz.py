@@ -33,3 +33,5 @@ def runtest() -> bool:
 if __name__ == "__main__":
     if not runtest():
         print("テスト失敗")
+        import sys
+        sys.exit(1)
