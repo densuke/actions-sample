@@ -15,7 +15,10 @@ jobs:
         uses: actions/checkout@v4
       - name: uvのセットアップ
         uses: astral-sh/setup-uv@v5
-      - name: テストの実施
+      - name: テストの実施(doctest)
+        run: |
+          uv run fizzbuzz.py
+      - name: テストの実施(pytest)
         run: |
           uv run pytest
     
