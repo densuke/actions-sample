@@ -24,15 +24,12 @@ def fizzbuzz(n: int) -> str:
     pass
 
 
-def runtest():
+def runtest() -> bool:
     print("テストを実施します")
     import doctest
     result = doctest.testmod()
-    if result.failed > 0:
-        print("失敗しました")
-        import sys
-        sys.exit(1)
-
+    return result.failed == 0
 
 if __name__ == "__main__":
-    runtest()
+    if not runtest():
+        print("テスト失敗")
