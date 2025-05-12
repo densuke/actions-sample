@@ -1,0 +1,21 @@
+name: 簡易テスト
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: コードの取得
+        uses: actions/checkout@v4
+      - name: uvのセットアップ
+        uses: astral-sh/setup-uv@v5
+      - name: テストの実施
+        run: |
+          uv run fizzbuzz.py
+    
