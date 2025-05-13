@@ -21,7 +21,9 @@ def fizzbuzz(n: int) -> str:
     >>> fizzbuzz(15)
     'FizzBuzz'
     """
-    pass
+    if n % 3 == 0:
+        return 'Fizz'
+    return str(n)
 
 
 def runtest():
