@@ -27,7 +27,13 @@ def fizzbuzz(n: int) -> str:
 def runtest():
     print("テストを実施します")
     import doctest
-    doctest.testmod()
+    result = doctest.testmod()
+    if result.failed == 0:
+        print("すべてのテストに合格しました")
+    else:
+        print(f"{result.failed}個のテストに失敗しました")
+        import sys
+        sys.exit(1)
 
 
 if __name__ == "__main__":
